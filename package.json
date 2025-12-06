@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jacobbuck/react-use-keypress.git"
+    "url": "git+https://github.com/aliebuck/react-use-keypress.git"
   },
   "keywords": [
     "event",
@@ -30,12 +30,12 @@
     "react",
     "window"
   ],
-  "author": "Jacob Buck",
+  "author": "Alie Buck <830470+aliebuck@users.noreply.github.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jacobbuck/react-use-keypress/issues"
+    "url": "https://github.com/aliebuck/react-use-keypress/issues"
   },
-  "homepage": "https://github.com/jacobbuck/react-use-keypress#readme",
+  "homepage": "https://github.com/aliebuck/react-use-keypress#readme",
   "dependencies": {
     "tiny-invariant": "^1.2.0"
   },
