@@ -2,6 +2,26 @@
   "name": "react-use-keypress",
   "version": "1.3.1",
   "description": "React hook which listens for pressed keys",
+  "keywords": [
+    "event",
+    "hook",
+    "key",
+    "keyboard",
+    "keydown",
+    "keypress",
+    "react",
+    "window"
+  ],
+  "homepage": "https://github.com/aliebuck/react-use-keypress#readme",
+  "bugs": {
+    "url": "https://github.com/aliebuck/react-use-keypress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliebuck/react-use-keypress.git"
+  },
+  "license": "MIT",
+  "author": "Alie Buck <830470+aliebuck@users.noreply.github.com>",
   "type": "module",
   "exports": {
     ".": {
@@ -20,29 +40,9 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "prepare": "npm run build && husky install",
-    "preversion": "npm run lint && npm run coverage",
-    "test": "vitest"
+    "test": "vitest",
+    "preversion": "npm run lint && npm run coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aliebuck/react-use-keypress.git"
-  },
-  "keywords": [
-    "event",
-    "hook",
-    "key",
-    "keyboard",
-    "keydown",
-    "keypress",
-    "react",
-    "window"
-  ],
-  "author": "Alie Buck <830470+aliebuck@users.noreply.github.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/aliebuck/react-use-keypress/issues"
-  },
-  "homepage": "https://github.com/aliebuck/react-use-keypress#readme",
   "dependencies": {
     "tiny-invariant": "^1.2.0"
   },
