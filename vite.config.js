@@ -14,4 +14,8 @@ export default defineConfig({
     sourcemap: true,
   },
   plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['@testing-library/jest-dom/vitest', './vitest.setup.js'],
+  },
 });
