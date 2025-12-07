@@ -8,7 +8,7 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: ["react", "tiny-invariant"],
+      external: ["react"],
     },
     sourcemap: true,
   },

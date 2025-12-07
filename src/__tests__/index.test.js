@@ -56,29 +56,3 @@ test("supports older browsers", () => {
 
   expect(handler).toHaveBeenCalledWith(event);
 });
-
-test("throws if keys is not an array or string", () => {
-  expect(() => useKeypress({}, vi.fn())).toThrow(
-    new Error("Invariant failed: Expected `keys` to be an array or string"),
-  );
-});
-
-test("throws if keys contains a value that is not a string", () => {
-  expect(() => useKeypress(["Escape", {}], vi.fn())).toThrow(
-    new Error("Invariant failed: Expected `keys[1]` to be a string"),
-  );
-});
-
-test("throws if handler is not a function", () => {
-  expect(() => useKeypress("Enter", {})).toThrow(
-    new Error("Invariant failed: Expected `handler` to be a function"),
-  );
-});
-
-test("doesn’t throw if handler is nullish", () => {
-  expect(() => {
-    renderUseKeypressHook("Enter", null);
-    renderUseKeypressHook("Enter", undefined);
-    dispatchWindowEvent(createKeydownEvent("Enter"));
-  }).not.toThrow();
-});

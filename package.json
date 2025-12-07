@@ -43,9 +43,6 @@
     "test": "vitest",
     "preversion": "npm run lint && npm run coverage"
   },
-  "dependencies": {
-    "tiny-invariant": "^1.2.0"
-  },
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
