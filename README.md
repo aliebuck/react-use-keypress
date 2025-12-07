@@ -18,11 +18,11 @@ useKeypress(keys, handler);
 Listening to a single key:
 
 ```jsx
-import useKeypress from 'react-use-keypress';
+import useKeypress from "react-use-keypress";
 
 const Example = (props) => {
   // ...
-  useKeypress('Escape', () => {
+  useKeypress("Escape", () => {
     // Do something when the user has pressed the Escape key
   });
   // ...
@@ -32,12 +32,12 @@ const Example = (props) => {
 Listening to multiple keys:
 
 ```jsx
-import useKeypress from 'react-use-keypress';
+import useKeypress from "react-use-keypress";
 
 const Example = (props) => {
   // ...
-  useKeypress(['ArrowLeft', 'ArrowRight'], (event) => {
-    if (event.key === 'ArrowLeft') {
+  useKeypress(["ArrowLeft", "ArrowRight"], (event) => {
+    if (event.key === "ArrowLeft") {
       moveLeft();
     } else {
       moveRight();

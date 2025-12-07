@@ -1,8 +1,8 @@
-import { act, renderHook } from '@testing-library/react';
-import { expect, test, vi } from 'vitest';
-import useKeypress from '..';
+import { act, renderHook } from "@testing-library/react";
+import { expect, test, vi } from "vitest";
+import useKeypress from "..";
 
-const createKeydownEvent = (key) => new KeyboardEvent('keydown', { key });
+const createKeydownEvent = (key) => new KeyboardEvent("keydown", { key });
 
 const dispatchWindowEvent = (event) =>
   act(() => {
@@ -12,23 +12,23 @@ const dispatchWindowEvent = (event) =>
 const renderUseKeypressHook = (...args) =>
   renderHook(() => useKeypress(...args));
 
-test('calls handler when matching key has been pressed', () => {
+test("calls handler when matching key has been pressed", () => {
   const handler = vi.fn();
-  renderUseKeypressHook('Escape', handler);
+  renderUseKeypressHook("Escape", handler);
 
-  const event = createKeydownEvent('Escape');
+  const event = createKeydownEvent("Escape");
 
   dispatchWindowEvent(event);
 
   expect(handler).toHaveBeenCalledWith(event);
 });
 
-test('calls handler when matching keys has been pressed', () => {
+test("calls handler when matching keys has been pressed", () => {
   const handler = vi.fn();
-  renderUseKeypressHook(['Enter', ' '], handler);
+  renderUseKeypressHook(["Enter", " "], handler);
 
-  const event1 = createKeydownEvent('Enter');
-  const event2 = createKeydownEvent(' ');
+  const event1 = createKeydownEvent("Enter");
+  const event2 = createKeydownEvent(" ");
 
   dispatchWindowEvent(event1);
   dispatchWindowEvent(event2);
@@ -37,48 +37,48 @@ test('calls handler when matching keys has been pressed', () => {
   expect(handler).toHaveBeenNthCalledWith(2, event2);
 });
 
-test('does not call handler when non-matching key has been pressed', () => {
+test("does not call handler when non-matching key has been pressed", () => {
   const handler = vi.fn();
-  renderUseKeypressHook('Escape', handler);
+  renderUseKeypressHook("Escape", handler);
 
-  dispatchWindowEvent(createKeydownEvent('Enter'));
+  dispatchWindowEvent(createKeydownEvent("Enter"));
 
   expect(handler).not.toHaveBeenCalled();
 });
 
-test('supports older browsers', () => {
+test("supports older browsers", () => {
   const handler = vi.fn();
-  renderUseKeypressHook('Escape', handler);
+  renderUseKeypressHook("Escape", handler);
 
-  const event = createKeydownEvent('Esc');
+  const event = createKeydownEvent("Esc");
 
   dispatchWindowEvent(event);
 
   expect(handler).toHaveBeenCalledWith(event);
 });
 
-test('throws if keys is not an array or string', () => {
+test("throws if keys is not an array or string", () => {
   expect(() => useKeypress({}, vi.fn())).toThrow(
-    new Error('Invariant failed: Expected `keys` to be an array or string')
+    new Error("Invariant failed: Expected `keys` to be an array or string"),
   );
 });
 
-test('throws if keys contains a value that is not a string', () => {
-  expect(() => useKeypress(['Escape', {}], vi.fn())).toThrow(
-    new Error('Invariant failed: Expected `keys[1]` to be a string')
+test("throws if keys contains a value that is not a string", () => {
+  expect(() => useKeypress(["Escape", {}], vi.fn())).toThrow(
+    new Error("Invariant failed: Expected `keys[1]` to be a string"),
   );
 });
 
-test('throws if handler is not a function', () => {
-  expect(() => useKeypress('Enter', {})).toThrow(
-    new Error('Invariant failed: Expected `handler` to be a function')
+test("throws if handler is not a function", () => {
+  expect(() => useKeypress("Enter", {})).toThrow(
+    new Error("Invariant failed: Expected `handler` to be a function"),
   );
 });
 
-test('doesn’t throw if handler is nullish', () => {
+test("doesn’t throw if handler is nullish", () => {
   expect(() => {
-    renderUseKeypressHook('Enter', null);
-    renderUseKeypressHook('Enter', undefined);
-    dispatchWindowEvent(createKeydownEvent('Enter'));
+    renderUseKeypressHook("Enter", null);
+    renderUseKeypressHook("Enter", undefined);
+    dispatchWindowEvent(createKeydownEvent("Enter"));
   }).not.toThrow();
 });

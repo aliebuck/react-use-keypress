@@ -17,7 +17,6 @@
   },
   "plugins": ["prettier", "react-hooks", "@vitest"],
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
     "react/display-name": "off"
   },
   "settings": {
