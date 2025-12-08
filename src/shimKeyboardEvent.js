@@ -1,5 +1,7 @@
-// Fixing inconsistencies from older browsers
-// https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
+/**
+ * Maps legacy or inconsistent `KeyboardEvent.key` values to modern standard values.
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
+ */
 const aliases = {
   Win: "Meta",
   Scroll: "ScrollLock",
@@ -20,13 +22,19 @@ const aliases = {
   Divide: "/",
 };
 
+/**
+ * Normalizes `KeyboardEvent.key` values across older browsers.
+ * Mutates the `event.key` property in-place if an alias exists.
+ * @param {KeyboardEvent} event - The event to normalize.
+ */
 const shimKeyboardEvent = (event) => {
   const originalKey = event.key;
   if (Object.hasOwn(aliases, originalKey)) {
+    const key = aliases[originalKey];
     Object.defineProperty(event, "key", {
       configurable: true,
       enumerable: true,
-      get: () => aliases[originalKey],
+      get: () => key,
     });
   }
 };
