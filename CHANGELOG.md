@@ -1,11 +1,22 @@
 # Changelog
 
+## v1.4.0 - 2025-12-08
+
+### Changed
+
+- Updated [react](https://www.npmjs.com/package/react) peer dependency to support v19+.
+
+### Removed
+
+- Removed type checking.
+- Removed [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency.
+
 ## v1.3.1 - 2022-04-14
 
 ### Changed
 
 - Updated [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency to v1.2.0.
-- Updated [react](https://www.npmjs.com/package/react) peer-dependency to support v18.
+- Updated [react](https://www.npmjs.com/package/react) peer dependency to support v18.
 
 ## v1.3.0 - 2021-05-02
 
