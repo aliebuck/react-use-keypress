@@ -54,6 +54,7 @@
     "@vitest/eslint-plugin": "^1.5.1",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsdoc": "^61.4.2",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^16.5.0",
