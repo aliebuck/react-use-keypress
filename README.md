@@ -1,6 +1,6 @@
 # react-use-keypress
 
-React hook which listens for pressed keys.
+React hook that listens for specific key presses.
 
 ## Usage
 
@@ -10,12 +10,12 @@ useKeypress(keys, handler);
 
 ### Parameters
 
-- `keys` a single or array of [key value(s)](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) to listen to.
-- `handler` function to be called when one of the matching key values has been pressed.
+- `keys` – a single key or array of [key values](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) to listen for.
+- `handler` – function called when a matching key is pressed.
 
-### Example
+### Examples
 
-Listening to a single key:
+**Single key:**
 
 ```jsx
 import useKeypress from "react-use-keypress";
@@ -29,7 +29,7 @@ const Example = (props) => {
 };
 ```
 
-Listening to multiple keys:
+**Multiple keys:**
 
 ```jsx
 import useKeypress from "react-use-keypress";
@@ -49,8 +49,8 @@ const Example = (props) => {
 
 ## Browser Support
 
-Includes a shim for the `KeyboardEvent.key` property to handle inconsistencies from Internet Explorer and older versions of Edge and Firefox.
+Includes a shim for the `KeyboardEvent.key` property to handle inconsistencies in older browsers.
 
 ## Requirements
 
-Requires a minimum of React version 16.8.0 for the Hooks API.
+Requires React 16.8.0 or higher (Hooks API).
