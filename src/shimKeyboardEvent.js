@@ -27,7 +27,7 @@ const aliases = {
  * Mutates the `event.key` property in-place if an alias exists.
  * @param {KeyboardEvent} event - The event to normalize.
  */
-const shimKeyboardEvent = (event) => {
+export const shimKeyboardEvent = (event) => {
   const originalKey = event.key;
   if (Object.hasOwn(aliases, originalKey)) {
     const key = aliases[originalKey];
@@ -38,5 +38,3 @@ const shimKeyboardEvent = (event) => {
     });
   }
 };
-
-export default shimKeyboardEvent;

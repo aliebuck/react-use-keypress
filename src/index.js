@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import shimKeyboardEvent from "./shimKeyboardEvent";
+import { shimKeyboardEvent } from "./shimKeyboardEvent";
 
 /**
  * Registers a global `keydown` listener and calls the provided handler

@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import shimKeyboardEvent from "../shimKeyboardEvent";
+import { shimKeyboardEvent } from "../shimKeyboardEvent";
 
 test("fixes key propertey in KeyboardEvent set by older browsers", () => {
   const event = new KeyboardEvent("keydown", { key: "Esc" });
