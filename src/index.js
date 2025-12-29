@@ -11,19 +11,23 @@ import shimKeyboardEvent from "./shimKeyboardEvent";
  * useKeypress(["ArrowUp", "ArrowDown"], handler);
  */
 const useKeypress = (keys, handler) => {
-  const callbackRef = useRef();
-
+  const handlerRef = useRef(handler);
   useEffect(() => {
-    callbackRef.current = (event) => {
+    handlerRef.current = handler;
+  }, [handler]);
+
+  const listenerRef = useRef();
+  useEffect(() => {
+    listenerRef.current = (event) => {
       shimKeyboardEvent(event);
       if (Array.isArray(keys) ? keys.includes(event.key) : keys === event.key) {
-        handler?.(event);
+        handlerRef.current(event);
       }
     };
-  }, [keys, handler]);
+  }, [keys]);
 
   useEffect(() => {
-    const listener = (event) => callbackRef.current?.(event);
+    const listener = (event) => listenerRef.current?.(event);
     window.addEventListener("keydown", listener);
     return () => window.removeEventListener("keydown", listener);
   }, []);
